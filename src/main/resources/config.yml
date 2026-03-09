@@ -1,0 +1,164 @@
+# EpicFly Configuration
+# Author: execute
+
+# Language: en, tr, ru
+language: en
+
+# Database settings
+database:
+  type: SQLITE # SQLITE or MYSQL
+  mysql:
+    host: localhost
+    port: 3306
+    database: epicfly
+    username: root
+    password: password
+    pool-size: 10
+
+# Economy settings
+economy:
+  enabled: true
+  currency-symbol: "$"
+
+# Fly packages (add as many as you want)
+packages:
+  - id: 1
+    name: "&a30 Minutes"
+    lore:
+      - "&7Flight duration: &a30 minutes"
+      - "&7Price: &e{price}"
+      - ""
+      - "&eClick to purchase!"
+    material: FEATHER
+    duration: 30
+    price: 500
+    slot: 19
+
+  - id: 2
+    name: "&b1 Hour"
+    lore:
+      - "&7Flight duration: &b1 hour"
+      - "&7Price: &e{price}"
+      - ""
+      - "&eClick to purchase!"
+    material: WIND_CHARGE
+    duration: 60
+    price: 900
+    slot: 21
+
+  - id: 3
+    name: "&63 Hours"
+    lore:
+      - "&7Flight duration: &63 hours"
+      - "&7Price: &e{price}"
+      - ""
+      - "&eClick to purchase!"
+    material: ELYTRA
+    duration: 180
+    price: 2400
+    slot: 23
+
+  - id: 4
+    name: "&c1 Day"
+    lore:
+      - "&7Flight duration: &c24 hours"
+      - "&7Price: &e{price}"
+      - ""
+      - "&eClick to purchase!"
+    material: DRAGON_EGG
+    duration: 1440
+    price: 15000
+    slot: 25
+
+# Discount settings
+discount:
+  enabled: true
+  chance: 0.75 # percent (0.75 = 0.75%)
+  amount: 50 # percent off
+
+# Fly settings
+fly:
+  # How many seconds before expiry to send the extend button in chat
+  warn-before-end: 60
+
+  # Combat tag
+  combat:
+    enabled: true
+    duration: 15 # seconds
+
+  # AFK protection (fly timer pauses when AFK)
+  afk:
+    enabled: true
+    timeout: 30 # seconds of no movement = AFK
+
+  # Slow fall when fly time expires
+  slow-fall-on-expire: true
+  slow-fall-duration: 5 # seconds
+
+  # Worlds where fly is disabled
+  disabled-worlds:
+    - world_nether
+    - world_the_end
+
+# Leaderboard
+leaderboard:
+  enabled: true
+  update-interval: 300 # seconds
+
+# Particles available in settings menu
+particles:
+  - name: "&fNone"
+    effect: NONE
+    material: BARRIER
+
+  - name: "&cHeart"
+    effect: HEART
+    material: RED_DYE
+
+  - name: "&eTotem"
+    effect: TOTEM_OF_UNDYING
+    material: TOTEM_OF_UNDYING
+
+  - name: "&dEnchant"
+    effect: ENCHANTMENT_TABLE
+    material: ENCHANTING_TABLE
+
+  - name: "&6Lava"
+    effect: LAVA
+    material: LAVA_BUCKET
+
+  - name: "&bWater"
+    effect: WATER_SPLASH
+    material: WATER_BUCKET
+
+  - name: "&9Portal"
+    effect: PORTAL
+    material: OBSIDIAN
+
+  - name: "&aSlime"
+    effect: SLIME
+    material: SLIME_BALL
+
+# Sounds available in settings menu
+sounds:
+  fly-open:
+    - name: "&aEagle"
+      sound: ENTITY_ENDER_DRAGON_FLAP
+    - name: "&bMagic"
+      sound: ENTITY_ILLUSIONER_CAST_SPELL
+    - name: "&eLevel Up"
+      sound: ENTITY_PLAYER_LEVELUP
+    - name: "&dTeleport"
+      sound: ENTITY_ENDERMAN_TELEPORT
+    - name: "&fNone"
+      sound: NONE
+
+  fly-close:
+    - name: "&cThud"
+      sound: ENTITY_GENERIC_BIG_FALL
+    - name: "&6Woosh"
+      sound: ENTITY_FIREWORK_ROCKET_BLAST
+    - name: "&eFizz"
+      sound: ENTITY_GENERIC_EXTINGUISH_FIRE
+    - name: "&fNone"
+      sound: NONE

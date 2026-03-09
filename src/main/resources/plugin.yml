@@ -1,0 +1,43 @@
+name: EpicFly
+version: '${project.version}'
+main: dev.execute.epicfly.EpicFly
+api-version: '1.20'
+author: execute
+description: Advanced fly system for survival/skyblock servers
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - Essentials
+
+commands:
+  efly:
+    description: EpicFly main command
+    usage: /efly [help|give|list|stats|reload]
+    permission: epicfly.use
+
+permissions:
+  epicfly.use:
+    description: Allows players to use the fly system
+    default: true
+  epicfly.admin:
+    description: Allows access to admin commands
+    default: op
+  epicfly.give:
+    description: Allows giving fly time to players
+    default: op
+  epicfly.list:
+    description: Allows listing flying players
+    default: op
+  epicfly.reload:
+    description: Allows reloading the plugin
+    default: op
+  epicfly.unlimited:
+    description: Grants unlimited fly time (for ranks)
+    default: false
+  epicfly.bypass.combat:
+    description: Bypass combat tag fly restriction
+    default: false
+  epicfly.bypass.world:
+    description: Bypass world restrictions
+    default: false
